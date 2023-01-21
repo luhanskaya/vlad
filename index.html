@@ -24,40 +24,9 @@
 
                     <form action="" method="get" class="form-example">
 
-                        <div class="form-floating mb-3">
-                            <input 
-                                type="text"
-                                class="form-control" 
-                                placeholder="Name" 
-                                id="name"
-                                maxlength="100"
-                                required>
-                            <label for="name">Name</label>
-                        </div>
-
-                        <div class="form-floating mb-3">
-                            <input 
-                                type="tel"
-                                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                                class="form-control" 
-                                placeholder="Phone" 
-                                id="phone"
-                                aria-describedby="phoneHelp">
-                            <label for="phone">Phone</label>
-                            <div id="phoneHelp" class="form-text">Format: 123-456-7890</div>
-                        </div>
-
-                        <div class="form-floating mb-3">
-                            <input 
-                                type="email"
-                                pattern=".+@gmail\.com"
-                                class="form-control" 
-                                placeholder="E-mail" 
-                                id="email"
-                                aria-describedby="emailHelp"
-                                required>
-                            <label for="email">E-mail</label>
-                            <div id="emailHelp" class="form-text">Enter your gmail.com email</div>
+                        <div class="mb-3">
+                            <label for="formFile" class="form-label">Photo</label>
+                            <input class="form-control" type="file" id="formFile" required accept="image/png, image/jpeg">
                         </div>
 
                         <div class="form-floating mb-3">
@@ -65,57 +34,44 @@
                                 type="text"
                                 class="form-control" 
                                 placeholder="Folder Name" 
-                                id="folderName"
+                                id="photoName"
                                 maxlength="100"
                                 required>
-                            <label for="folderName">Folder Name</label>
+                            <label for="photoName">Photo Name</label>
                         </div>
 
                         <div class="form-floating mb-3">
                             <textarea 
                                 class="form-control" 
-                                placeholder="Folder Description" 
-                                id="folderDescription"
-                                style="height: 100px"></textarea>
-                            <label for="folderDescription">Folder Description</label>
+                                placeholder="Photo Description" 
+                                id="photoDescription"
+                                style="height: 120px"></textarea>
+                            <label for="photoDescription">Photo Description</label>
                         </div>
 
                         <div class="form-floating mb-3">
-                            <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                                <option selected>Open this select menu</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                            <label for="floatingSelect">Works with selects</label>
+                            <input 
+                                type="number"
+                                class="form-control" 
+                                placeholder="Height" 
+                                id="height"
+                                aria-describedby="heightHelp">
+                            <label for="height">Height</label>
+                            <div id="heightHelp" class="form-text">Height of image in px</div>
                         </div>
 
-
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                Default checkbox
-                            </label>
-                        </div>
-                        <div class="form-check mb-3">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                            <label class="form-check-label" for="flexCheckChecked">
-                                Checked checkbox
-                            </label>
+                        <div class="form-floating mb-3">
+                            <input 
+                                type="number"
+                                class="form-control" 
+                                placeholder="Width" 
+                                id="width"
+                                aria-describedby="widthHelp">
+                            <label for="width">Width</label>
+                            <div id="widthHelp" class="form-text">Width of image in px</div>
                         </div>
 
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                            <label class="form-check-label" for="flexRadioDefault1">
-                                Default radio
-                            </label>
-                        </div>
-                        <div class="form-check mb-3">
-                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                            <label class="form-check-label" for="flexRadioDefault2">
-                                Default checked radio
-                            </label>
-                        </div>
+                        
 
                         <div class="form-example">
                             <input 
