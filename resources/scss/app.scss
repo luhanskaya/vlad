@@ -1,0 +1,17 @@
+/** Set style theme */
+@import "base/variables";
+
+/** Import npm dependencies */
+@import "~bootstrap/scss/bootstrap";
+
+/** Import theme styles */
+@import "base/mixins";
+// @import "base/fonts";
+// @import "base/reboot";
+// @import "base/typo";
+@import "base/figure";
+@import "base/sizing";
+// @import "base/animation";
+// @import "base/container";
+// @import "base/global";
+// @import "base/wp-classes";

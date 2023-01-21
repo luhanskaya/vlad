@@ -1,0 +1,84 @@
+$violet:            #54397e;
+
+$primary:           $violet;
+
+$theme-colors: ();
+$theme-colors: map-merge(
+  (
+    "primary":          $primary,
+  ),
+  $theme-colors
+);
+
+$spacer: 1rem;
+$spacers: ();
+$spacers: (
+  0:  0,
+  1:  $spacer * 0.25,
+  2:  $spacer * 0.5,
+  3:  $spacer,
+  4:  $spacer * 1.5,
+  5:  $spacer * 2,
+  6:  $spacer * 2.5,
+  7:  $spacer * 3,
+  8:  $spacer * 3.5,
+  9:  $spacer * 4,
+  10: $spacer * 4.5,
+  11: $spacer * 5,
+  12: $spacer * 5.5,
+  13: $spacer * 6,
+  14: $spacer * 6.5,
+  15: $spacer * 7,
+  16: $spacer * 7.5,
+  17: $spacer * 8,
+  18: $spacer * 8.5,
+  19: $spacer * 9,
+  20: $spacer * 9.5,
+  21: $spacer * 10,
+  22: $spacer * 10.5,
+  23: $spacer * 11,
+  24: $spacer * 11.5,
+  25: $spacer * 12,
+  26: $spacer * 12.5,
+  27: $spacer * 13,
+  28: $spacer * 13.5,
+  29: $spacer * 14,
+  30: $spacer * 14.5,
+  31: $spacer * 15,
+  32: $spacer * 15.5,
+);
+
+// This variable affects the `.h-*` and `.w-*` classes.
+$sizes: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$sizes: map-merge(
+  (
+    25: 25%,
+    50: 50%,
+    70: 70%,
+    75: 75%,
+    100: 100%,
+    auto: auto
+  ),
+  $sizes
+);
+
+// Typography
+$open-sans:        	            'Open Sans';
+$font-family-base:              $open-sans, sans-serif;
+
+// Links
+$link-color:                    $primary;
+$link-decoration:               none;
+$link-shade-percentage:         0;
+
+// Font
+$font-size-base:                1;
+
+// Cards
+$card-border-radius:            0;
+$card-spacer-x:                 1.2rem;
+$card-spacer-y:                 1.5rem;
+$card-title-spacer-y:           2rem;
+
+// Form
