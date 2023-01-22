@@ -5,8 +5,9 @@ const carousel = () => {
     $('.js-slider').slick({
         slidesToShow: 5,
         slidesToScroll: 1,
-        // autoplay: true,
-        // autoplaySpeed: 2000,
+        speed: 1000,
+        autoplay: true,
+        autoplaySpeed: 2000,
         prevArrow: "<button type='button' class='slick-prev'></button>",
         nextArrow: "<button type='button' class='slick-next'></button>",
         responsive: [
@@ -37,35 +38,33 @@ const carousel = () => {
         ],
     });
 
+    let slideIndex = 0;
+
     $('.js-add-slide').on('click', function () {
+        slideIndex++;
 
-        $('.js-slider').slick('slickAdd', `<div class="item equal equal-100"><img class="object-fit bg-image js-new-img" src="" alt="Image"></div>`, 0);
+        $('.js-slider').slick('slickAdd', `<div><div><div class="item equal equal-100"><img id="${slideIndex}" class="object-fit bg-image js-new-img" src="" alt="Image"></div></div></div>`, 0);
 
-        const new_img = document.querySelector('.js-new-img');
+        const new_img = document.getElementById(`${slideIndex}`);
         let photo = document.forms['form-add-photo']['photo'];
 
-
-
         let file = photo.files[0];
-        // let imageType = /image.*/;
+        console.log(file);
+        let imageType = /image.*/;
 
-        // if (file.type.match(imageType)) {
+        if (file.type.match(imageType)) {
             let reader = new FileReader();
 
             reader.addEventListener("load", () => {
                 // convert image file to base64 string
+                console.log(reader.result);
                 new_img.src = reader.result;
             }, false);
 
             if (file) {
                 reader.readAsDataURL(file);
             }
-        // }
-
-
-       
-
-
+        }
     });
 
 }

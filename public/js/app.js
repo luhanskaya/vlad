@@ -3244,41 +3244,29 @@ document.addEventListener('DOMContentLoaded', function () {
   (0,_modules_form__WEBPACK_IMPORTED_MODULE_0__["default"])();
   (0,_modules_carousel__WEBPACK_IMPORTED_MODULE_1__["default"])();
 });
+window.onload = function () {
+  var fileInput = document.getElementById('fileInput');
+  var fileDisplayArea = document.getElementById('fileDisplayArea');
+  fileInput.addEventListener('change', function () {
+    var file = fileInput.files[0];
 
-// window.onload = function() {
+    // console.log(file);
 
-//     var fileInput = document.getElementById('fileInput');
-//     var fileDisplayArea = document.getElementById('fileDisplayArea');
-
-//     fileInput.addEventListener('change', function() {
-//         var file = fileInput.files[0];
-
-//         // console.log(file);
-
-//         var imageType = /image.*/;
-
-//         if (file.type.match(imageType)) {
-//             var reader = new FileReader();
-
-//             reader.onload = function() {
-//                 fileDisplayArea.innerHTML = "";
-
-//                 var img = new Image();
-//                 img.src = reader.result;
-
-//                 fileDisplayArea.appendChild(img);
-
-//                 console.log(fileDisplayArea);
-//             }
-
-//             reader.readAsDataURL(file); 
-
-//         } else {
-//             fileDisplayArea.innerHTML = "File not supported!"
-//         }
-//     });
-
-// }
+    var imageType = /image.*/;
+    if (file.type.match(imageType)) {
+      var reader = new FileReader();
+      reader.onload = function () {
+        fileDisplayArea.innerHTML = "";
+        var img = new Image();
+        img.src = reader.result;
+        fileDisplayArea.appendChild(img);
+      };
+      reader.readAsDataURL(file);
+    } else {
+      fileDisplayArea.innerHTML = "File not supported!";
+    }
+  });
+};
 
 /***/ }),
 
@@ -3300,8 +3288,9 @@ var carousel = function carousel() {
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-slider').slick({
     slidesToShow: 5,
     slidesToScroll: 1,
-    // autoplay: true,
-    // autoplaySpeed: 2000,
+    speed: 1000,
+    autoplay: true,
+    autoplaySpeed: 2000,
     prevArrow: "<button type='button' class='slick-prev'></button>",
     nextArrow: "<button type='button' class='slick-next'></button>",
     responsive: [{
@@ -3326,26 +3315,28 @@ var carousel = function carousel() {
       }
     }]
   });
+  var slideIndex = 0;
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-add-slide').on('click', function () {
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-slider').slick('slickAdd', "<div class=\"item equal equal-100\"><img class=\"object-fit bg-image js-new-img\" src=\"\" alt=\"Image\"></div>", 0);
-    var new_img = document.querySelector('.js-new-img');
+    slideIndex++;
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-slider').slick('slickAdd', "<div><div><div class=\"item equal equal-100\"><img id=\"".concat(slideIndex, "\" class=\"object-fit bg-image js-new-img\" src=\"\" alt=\"Image\"></div></div></div>"), 0);
+    var new_img = document.getElementById("".concat(slideIndex));
     var photo = document.forms['form-add-photo']['photo'];
     var file = photo.files[0];
-    // let imageType = /image.*/;
-
-    // if (file.type.match(imageType)) {
-    var reader = new FileReader();
-    reader.addEventListener("load", function () {
-      // convert image file to base64 string
-      new_img.src = reader.result;
-    }, false);
-    if (file) {
-      reader.readAsDataURL(file);
+    console.log(file);
+    var imageType = /image.*/;
+    if (file.type.match(imageType)) {
+      var reader = new FileReader();
+      reader.addEventListener("load", function () {
+        // convert image file to base64 string
+        console.log(reader.result);
+        new_img.src = reader.result;
+      }, false);
+      if (file) {
+        reader.readAsDataURL(file);
+      }
     }
-    // }
   });
 };
-
 /* harmony default export */ __webpack_exports__["default"] = (carousel);
 
 /***/ }),

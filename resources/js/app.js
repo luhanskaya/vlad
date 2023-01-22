@@ -8,40 +8,38 @@ document.addEventListener('DOMContentLoaded', function (){
 });
 
 
-// window.onload = function() {
+window.onload = function() {
 
-//     var fileInput = document.getElementById('fileInput');
-//     var fileDisplayArea = document.getElementById('fileDisplayArea');
+    var fileInput = document.getElementById('fileInput');
+    var fileDisplayArea = document.getElementById('fileDisplayArea');
 
 
-//     fileInput.addEventListener('change', function() {
-//         var file = fileInput.files[0];
+    fileInput.addEventListener('change', function() {
+        var file = fileInput.files[0];
 
-//         // console.log(file);
+        // console.log(file);
 
-//         var imageType = /image.*/;
+        var imageType = /image.*/;
 
-//         if (file.type.match(imageType)) {
-//             var reader = new FileReader();
+        if (file.type.match(imageType)) {
+            var reader = new FileReader();
 
-//             reader.onload = function() {
-//                 fileDisplayArea.innerHTML = "";
+            reader.onload = function() {
+                fileDisplayArea.innerHTML = "";
 
-//                 var img = new Image();
-//                 img.src = reader.result;
+                var img = new Image();
+                img.src = reader.result;
 
-//                 fileDisplayArea.appendChild(img);
+                fileDisplayArea.appendChild(img);
+            }
 
-//                 console.log(fileDisplayArea);
-//             }
-
-//             reader.readAsDataURL(file); 
+            reader.readAsDataURL(file); 
 
           
-//         } else {
-//             fileDisplayArea.innerHTML = "File not supported!"
-//         }
-//     });
+        } else {
+            fileDisplayArea.innerHTML = "File not supported!"
+        }
+    });
 
-// }
+}
 
