@@ -29,7 +29,7 @@
                 <div class="item equal equal-100">
                     <img class="object-fit bg-image" src="./images/sunflowers-7706977_960_720.webp" alt="Image">
                 </div>
-                <div class="item equal equal-100">
+                <!-- <div class="item equal equal-100">
                     <img class="object-fit bg-image" src="./images/rat-7713508_960_720.webp" alt="Image">
                 </div>
                 <div class="item equal equal-100">
@@ -58,7 +58,7 @@
                 </div>
                 <div class="item equal equal-100">
                     <img class="object-fit bg-image" src="./images/beach-7714610_960_720.webp" alt="Image">
-                </div>
+                </div> -->
             </div>
 
             <div class="text-center mt-5">
@@ -68,7 +68,7 @@
             </div>
 
             <!-- Modal -->
-            <div class="modal fade" id="addPhoto" tabindex="-1" aria-labelledby="addPhotoLabel" aria-hidden="true">
+            <div class="modal fade js-modal" id="addPhoto" tabindex="-1" aria-labelledby="addPhotoLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -76,7 +76,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <form action="" method="get" class="js-add-photo-form">
+                            <form action="" name="form-add-photo" method="get" class="js-add-photo-form">
 
                                 <div class="mb-3">
                                     <label for="formFile" class="form-label">Photo</label>
@@ -85,7 +85,7 @@
                                         class="form-control"
                                         type="file" 
                                         id="formFile" 
-                                        required 
+                                         
                                         accept="image/png, image/jpeg">
                                 </div>
         
@@ -97,7 +97,8 @@
                                         placeholder="Photo Name" 
                                         id="photoName"
                                         maxlength="100"
-                                        required>
+
+                                        >
                                 </div>
         
                                 <div class="mb-3">
@@ -128,14 +129,10 @@
                                     <div id="widthHelp" class="form-text">Width of image in px</div>
                                 </div>
         
-                                
-        
-                                <div class="form-example">
-                                    <input 
-                                        type="submit"
-                                        value="Submit"
-                                        class="btn btn-primary">
-                                </div>
+                                <input 
+                                    type="submit"
+                                    value="Submit"
+                                    class="btn btn-primary js-add-slide">
                             </form>
                         </div>
                     </div>

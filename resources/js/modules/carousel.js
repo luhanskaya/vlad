@@ -7,8 +7,8 @@ const carousel = () => {
         slidesToScroll: 1,
         // autoplay: true,
         // autoplaySpeed: 2000,
-        prevArrow:"<button type='button' class='slick-prev'></button>",
-        nextArrow:"<button type='button' class='slick-next'></button>",
+        prevArrow: "<button type='button' class='slick-prev'></button>",
+        nextArrow: "<button type='button' class='slick-next'></button>",
         responsive: [
             {
                 breakpoint: 1200,
@@ -35,6 +35,12 @@ const carousel = () => {
                 },
             },
         ],
+    });
+
+    $('.js-add-slide').on('click', function () {
+        let photo = document.forms['form-add-photo']['photo'];
+        console.log(photo.value);
+        $('.js-slider').slick('slickAdd', `<div class="item equal equal-100"><img class="object-fit bg-image" src="${photo.value}" alt="Image"></div>`, 0);
     });
 }
 

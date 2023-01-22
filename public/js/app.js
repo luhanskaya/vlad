@@ -3234,22 +3234,16 @@ function withinMaxClamp(min, value, max) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.esm.js");
-/* harmony import */ var _modules_form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/form */ "./resources/js/modules/form.js");
-/* harmony import */ var _modules_carousel__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/carousel */ "./resources/js/modules/carousel.js");
+/* harmony import */ var _modules_form__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/form */ "./resources/js/modules/form.js");
+/* harmony import */ var _modules_carousel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/carousel */ "./resources/js/modules/carousel.js");
+/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/modal */ "./resources/js/modules/modal.js");
 
-window.bootstrap = bootstrap__WEBPACK_IMPORTED_MODULE_0__;
 
 
 document.addEventListener('DOMContentLoaded', function () {
-  (0,_modules_form__WEBPACK_IMPORTED_MODULE_1__["default"])();
-  (0,_modules_carousel__WEBPACK_IMPORTED_MODULE_2__["default"])();
+  (0,_modules_form__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  (0,_modules_carousel__WEBPACK_IMPORTED_MODULE_1__["default"])();
 });
-
-// $(document).ready(function(){
-//     $('.js-slider').slick({
-//     });
-// });
 
 /***/ }),
 
@@ -3297,6 +3291,11 @@ var carousel = function carousel() {
       }
     }]
   });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-add-slide').on('click', function () {
+    var photo = document.forms['form-add-photo']['photo'];
+    console.log(photo.value);
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-slider').slick('slickAdd', "<div class=\"item equal equal-100\"><img class=\"object-fit bg-image\" src=\"".concat(photo.value, "\" alt=\"Image\"></div>"), 0);
+  });
 };
 /* harmony default export */ __webpack_exports__["default"] = (carousel);
 
@@ -3332,6 +3331,27 @@ var addPhoto = function addPhoto() {
   }
 };
 /* harmony default export */ __webpack_exports__["default"] = (addPhoto);
+
+/***/ }),
+
+/***/ "./resources/js/modules/modal.js":
+/*!***************************************!*\
+  !*** ./resources/js/modules/modal.js ***!
+  \***************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.esm.js");
+
+window.bootstrap = bootstrap__WEBPACK_IMPORTED_MODULE_0__;
+var modal = new bootstrap__WEBPACK_IMPORTED_MODULE_0__.Modal(document.querySelector('.js-modal'));
+document.addEventListener('click', function (e) {
+  if (e.target.classList.contains('js-add-slide')) {
+    e.preventDefault();
+    modal.hide();
+  }
+});
 
 /***/ }),
 
