@@ -38,10 +38,36 @@ const carousel = () => {
     });
 
     $('.js-add-slide').on('click', function () {
+
+        $('.js-slider').slick('slickAdd', `<div class="item equal equal-100"><img class="object-fit bg-image js-new-img" src="" alt="Image"></div>`, 0);
+
+        const new_img = document.querySelector('.js-new-img');
         let photo = document.forms['form-add-photo']['photo'];
-        console.log(photo.value);
-        $('.js-slider').slick('slickAdd', `<div class="item equal equal-100"><img class="object-fit bg-image" src="${photo.value}" alt="Image"></div>`, 0);
+
+
+
+        let file = photo.files[0];
+        // let imageType = /image.*/;
+
+        // if (file.type.match(imageType)) {
+            let reader = new FileReader();
+
+            reader.addEventListener("load", () => {
+                // convert image file to base64 string
+                new_img.src = reader.result;
+            }, false);
+
+            if (file) {
+                reader.readAsDataURL(file);
+            }
+        // }
+
+
+       
+
+
     });
+
 }
 
 export default carousel;

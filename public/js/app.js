@@ -3245,6 +3245,41 @@ document.addEventListener('DOMContentLoaded', function () {
   (0,_modules_carousel__WEBPACK_IMPORTED_MODULE_1__["default"])();
 });
 
+// window.onload = function() {
+
+//     var fileInput = document.getElementById('fileInput');
+//     var fileDisplayArea = document.getElementById('fileDisplayArea');
+
+//     fileInput.addEventListener('change', function() {
+//         var file = fileInput.files[0];
+
+//         // console.log(file);
+
+//         var imageType = /image.*/;
+
+//         if (file.type.match(imageType)) {
+//             var reader = new FileReader();
+
+//             reader.onload = function() {
+//                 fileDisplayArea.innerHTML = "";
+
+//                 var img = new Image();
+//                 img.src = reader.result;
+
+//                 fileDisplayArea.appendChild(img);
+
+//                 console.log(fileDisplayArea);
+//             }
+
+//             reader.readAsDataURL(file); 
+
+//         } else {
+//             fileDisplayArea.innerHTML = "File not supported!"
+//         }
+//     });
+
+// }
+
 /***/ }),
 
 /***/ "./resources/js/modules/carousel.js":
@@ -3292,11 +3327,25 @@ var carousel = function carousel() {
     }]
   });
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-add-slide').on('click', function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-slider').slick('slickAdd', "<div class=\"item equal equal-100\"><img class=\"object-fit bg-image js-new-img\" src=\"\" alt=\"Image\"></div>", 0);
+    var new_img = document.querySelector('.js-new-img');
     var photo = document.forms['form-add-photo']['photo'];
-    console.log(photo.value);
-    jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-slider').slick('slickAdd', "<div class=\"item equal equal-100\"><img class=\"object-fit bg-image\" src=\"".concat(photo.value, "\" alt=\"Image\"></div>"), 0);
+    var file = photo.files[0];
+    // let imageType = /image.*/;
+
+    // if (file.type.match(imageType)) {
+    var reader = new FileReader();
+    reader.addEventListener("load", function () {
+      // convert image file to base64 string
+      new_img.src = reader.result;
+    }, false);
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+    // }
   });
 };
+
 /* harmony default export */ __webpack_exports__["default"] = (carousel);
 
 /***/ }),
