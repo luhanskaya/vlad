@@ -1,0 +1,38 @@
+.slick-prev,
+.slick-next {
+  $size: 40px;
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  background-color: rgba($white, 0.5);
+  border-radius: 50%;
+  width: $size;
+  height: $size;
+
+  &::before {
+    font-family: 'slick', sans-serif;
+    font-size: 20px;
+    line-height: 1;
+    opacity: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+.slick-prev {
+  left: 30px;
+
+  &::before {
+    content: '←';
+  }
+}
+
+.slick-next {
+  right: 30px;
+
+  &::before {
+    content: '→';
+  }
+}

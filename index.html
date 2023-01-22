@@ -16,71 +16,129 @@
 
 <body>
 
-    <section class="py-10">
-        <div class="container">
+    <section class="py-5">
+        <div class="container-fluid">
 
-            <div class="row">
-                <div class="col-lg-6 mx-auto">
+            <div class="js-slider">
+                <div class="item equal equal-100">
+                    <img class="object-fit bg-image" src="./images/woman-7691013_960_720.webp" alt="Image">
+                </div>
+                <div class="item equal equal-100">
+                    <img class="object-fit bg-image" src="./images/water-7709322_960_720.jpg" alt="Image">
+                </div>
+                <div class="item equal equal-100">
+                    <img class="object-fit bg-image" src="./images/sunflowers-7706977_960_720.webp" alt="Image">
+                </div>
+                <div class="item equal equal-100">
+                    <img class="object-fit bg-image" src="./images/rat-7713508_960_720.webp" alt="Image">
+                </div>
+                <div class="item equal equal-100">
+                    <img class="object-fit bg-image" src="./images/mountains-7591326_960_720.webp" alt="Image">
+                </div>
+                <div class="item equal equal-100">
+                    <img class="object-fit bg-image" src="./images/macarons-5856039_960_720.jpg" alt="Image">
+                </div>
+                <div class="item equal equal-100">
+                    <img class="object-fit bg-image" src="./images/italy-7708552_960_720.jpg" alt="Image">
+                </div>
+                <div class="item equal equal-100">
+                    <img class="object-fit bg-image" src="./images/ground-ginseng-7523161_960_720.webp" alt="Image">
+                </div>
+                <div class="item equal equal-100">
+                    <img class="object-fit bg-image" src="./images/flamingo-7714344_960_720.webp" alt="Image">
+                </div>
+                <div class="item equal equal-100">
+                    <img class="object-fit bg-image" src="./images/flower-7718952_960_720.webp" alt="Image">
+                </div>
+                <div class="item equal equal-100">
+                    <img class="object-fit bg-image" src="./images/dog-7583611_960_720.webp" alt="Image">
+                </div>
+                <div class="item equal equal-100">
+                    <img class="object-fit bg-image" src="./images/demoiselle-crane-7705173_960_720.jpg" alt="Image">
+                </div>
+                <div class="item equal equal-100">
+                    <img class="object-fit bg-image" src="./images/beach-7714610_960_720.webp" alt="Image">
+                </div>
+            </div>
 
-                    <form action="" method="get" class="form-example">
+            <div class="text-center mt-5">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addPhoto">
+                    Add Photo
+                </button>
+            </div>
 
-                        <div class="mb-3">
-                            <label for="formFile" class="form-label">Photo</label>
-                            <input class="form-control" type="file" id="formFile" required accept="image/png, image/jpeg">
+            <!-- Modal -->
+            <div class="modal fade" id="addPhoto" tabindex="-1" aria-labelledby="addPhotoLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="addPhotoLabel">Add Photo</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
+                        <div class="modal-body">
+                            <form action="" method="get" class="js-add-photo-form">
 
-                        <div class="form-floating mb-3">
-                            <input 
-                                type="text"
-                                class="form-control" 
-                                placeholder="Folder Name" 
-                                id="photoName"
-                                maxlength="100"
-                                required>
-                            <label for="photoName">Photo Name</label>
+                                <div class="mb-3">
+                                    <label for="formFile" class="form-label">Photo</label>
+                                    <input
+                                        name="photo"
+                                        class="form-control"
+                                        type="file" 
+                                        id="formFile" 
+                                        required 
+                                        accept="image/png, image/jpeg">
+                                </div>
+        
+                                <div class="mb-3">
+                                    <input 
+                                        name="photoName"
+                                        type="text"
+                                        class="form-control" 
+                                        placeholder="Photo Name" 
+                                        id="photoName"
+                                        maxlength="100"
+                                        required>
+                                </div>
+        
+                                <div class="mb-3">
+                                    <textarea 
+                                        class="form-control" 
+                                        placeholder="Photo Description" 
+                                        id="photoDescription"
+                                        style="height: 120px"></textarea>
+                                </div>
+        
+                                <div class="mb-3">
+                                    <input 
+                                        type="number"
+                                        class="form-control" 
+                                        placeholder="Height" 
+                                        id="height"
+                                        aria-describedby="heightHelp">
+                                    <div id="heightHelp" class="form-text">Height of image in px</div>
+                                </div>
+        
+                                <div class="mb-3">
+                                    <input 
+                                        type="number"
+                                        class="form-control" 
+                                        placeholder="Width" 
+                                        id="width"
+                                        aria-describedby="widthHelp">
+                                    <div id="widthHelp" class="form-text">Width of image in px</div>
+                                </div>
+        
+                                
+        
+                                <div class="form-example">
+                                    <input 
+                                        type="submit"
+                                        value="Submit"
+                                        class="btn btn-primary">
+                                </div>
+                            </form>
                         </div>
-
-                        <div class="form-floating mb-3">
-                            <textarea 
-                                class="form-control" 
-                                placeholder="Photo Description" 
-                                id="photoDescription"
-                                style="height: 120px"></textarea>
-                            <label for="photoDescription">Photo Description</label>
-                        </div>
-
-                        <div class="form-floating mb-3">
-                            <input 
-                                type="number"
-                                class="form-control" 
-                                placeholder="Height" 
-                                id="height"
-                                aria-describedby="heightHelp">
-                            <label for="height">Height</label>
-                            <div id="heightHelp" class="form-text">Height of image in px</div>
-                        </div>
-
-                        <div class="form-floating mb-3">
-                            <input 
-                                type="number"
-                                class="form-control" 
-                                placeholder="Width" 
-                                id="width"
-                                aria-describedby="widthHelp">
-                            <label for="width">Width</label>
-                            <div id="widthHelp" class="form-text">Width of image in px</div>
-                        </div>
-
-                        
-
-                        <div class="form-example">
-                            <input 
-                                type="submit"
-                                value="Submit"
-                                class="btn btn-primary">
-                        </div>
-                    </form>
-
+                    </div>
                 </div>
             </div>
 
@@ -88,6 +146,8 @@
     </section>
 
 
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script> -->
+  
     <script src="public/js/app.js" type="text/javascript"></script>
     <script id="__bs_script__">//<![CDATA[
         document.write("<script async src='http://HOST:3002/browser-sync/browser-sync-client.js?v=2.27.11'><\/script>".replace("HOST", location.hostname));
