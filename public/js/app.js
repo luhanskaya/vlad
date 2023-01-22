@@ -3322,7 +3322,7 @@ var carousel = function carousel() {
       var fileReader = new FileReader();
       fileReader.readAsDataURL(files);
       fileReader.addEventListener("load", function () {
-        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-slider').slick('slickAdd', "<div><div><div class=\"item equal equal-100\"><img class=\"object-fit bg-image js-new-img\" src=\"".concat(this.result, "\" alt=\"Image\"></div></div></div>"), 0);
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-slider').slick('slickAdd', "<div><div><div class=\"item equal equal-100\"><img class=\"object-fit bg-image\" src=\"".concat(this.result, "\" alt=\"Image\"></div></div></div>"), 0);
       });
     }
   });

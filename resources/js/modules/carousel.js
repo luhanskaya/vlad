@@ -45,7 +45,7 @@ const carousel = () => {
             const fileReader = new FileReader();
             fileReader.readAsDataURL(files);
             fileReader.addEventListener("load", function () {
-                $('.js-slider').slick('slickAdd', `<div><div><div class="item equal equal-100"><img class="object-fit bg-image js-new-img" src="${this.result}" alt="Image"></div></div></div>`, 0);
+                $('.js-slider').slick('slickAdd', `<div><div><div class="item equal equal-100"><img class="object-fit bg-image" src="${this.result}" alt="Image"></div></div></div>`, 0);
             });
         }
     });
