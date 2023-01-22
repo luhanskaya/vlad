@@ -38,32 +38,15 @@ const carousel = () => {
         ],
     });
 
-    let slideIndex = 0;
-
     $('.js-add-slide').on('click', function () {
-        slideIndex++;
-
-        $('.js-slider').slick('slickAdd', `<div><div><div class="item equal equal-100"><img id="${slideIndex}" class="object-fit bg-image js-new-img" src="" alt="Image"></div></div></div>`, 0);
-
-        const new_img = document.getElementById(`${slideIndex}`);
         let photo = document.forms['form-add-photo']['photo'];
-
-        let file = photo.files[0];
-        console.log(file);
-        let imageType = /image.*/;
-
-        if (file.type.match(imageType)) {
-            let reader = new FileReader();
-
-            reader.addEventListener("load", () => {
-                // convert image file to base64 string
-                console.log(reader.result);
-                new_img.src = reader.result;
-            }, false);
-
-            if (file) {
-                reader.readAsDataURL(file);
-            }
+        const files = photo.files[0];
+        if (files) {
+            const fileReader = new FileReader();
+            fileReader.readAsDataURL(files);
+            fileReader.addEventListener("load", function () {
+                $('.js-slider').slick('slickAdd', `<div><div><div class="item equal equal-100"><img class="object-fit bg-image js-new-img" src="${this.result}" alt="Image"></div></div></div>`, 0);
+            });
         }
     });
 
